@@ -1,10 +1,64 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  
+
+  <ion-card class="sliderCard">
+    <ion-slides pager>
+      <ion-slide>
+        <img src="./assets/slider/banner1.jpeg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="./assets/slider/middleBanner.png" />
+      </ion-slide>
+      <ion-slide>
+        <img src="./assets/slider/middleBanner.png" />
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-grid class="optionBox">
+    <ion-row class="">
+      <ion-col size="3" (click)="openCategory('news')" >
+        <div class="colItem" style="background-color:#249AA7;">
+          <ion-badge class="badgeIcon" style="background-color:#1b8a96;">03</ion-badge>
+          <div class="optionDataDiv" >
+            <ion-icon class="optionBoxIcon" name="newspaper-outline"></ion-icon>
+            <div class="listLabel">Members</div>
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col size="3"  (click)="openCategory('event')" >
+        <div class="colItem" style="background-color:#ABD25E;">
+          <ion-badge class="badgeIcon" style="background-color:#749a28;">03</ion-badge>
+          <div class="optionDataDiv">
+            <ion-icon class="optionBoxIcon" name="aperture-outline"></ion-icon>
+            <div class="listLabel">Student</div>
+          </div>
+        </div>
+      </ion-col>
+      
+      <ion-col size="3"  class="leftRightBorder_rm" routerDirection="forward" routerLink="/tabs/interaction">
+        <div class="colItem" style="background-color: #F8C830;">
+          <div class="optionDataDiv">
+            <ion-icon class="optionBoxIcon" name="chatbox-ellipses-outline"></ion-icon>
+            <div class="listLabel">Courses</div>
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col size="3"  routerDirection="forward" routerLink="/tabs/gallery">
+        <div class="colItem" style="background-color: #F1594A;">
+          <ion-badge class="badgeIcon" style="background-color:#d45347;">03</ion-badge>
+          <div class="optionDataDiv galleryCard">
+            <ion-icon class="optionBoxIcon" name="images-outline" ></ion-icon>
+            <div class="listLabel">GALLERY</div>
+          </div>
+        </div>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
 
 
-  </ion-content>
+</ion-content>
