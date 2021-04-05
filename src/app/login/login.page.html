@@ -1,0 +1,60 @@
+<ion-content mode="md" >
+  
+  <ion-card style="margin-top: 15%;">
+    <ion-card-content>            
+        <!-- <ion-list>
+          <ion-row>
+            <div class="desciption">
+              <p>Welcome to the forum for the interactivity and information for alumnus and present students of the <b>PRESTIGE GROUP OF INSTITUTES</b>.</p>
+              <p>Please provide the following details. Upon acceptance, you will be sent an OTP on your mobile number with which you can login.</p>
+            </div>
+          </ion-row>
+        </ion-list> -->
+        
+        <form  (ngSubmit)="loginAction()" novalidate>
+          <ion-list class="loginForm">            
+            <ion-row>
+              <ion-col>
+                <ion-item color="transparent">
+                  <ion-label position="floating" >Email</ion-label>
+                  <ion-input type="text" name="email" [(ngModel)]="postData.email"></ion-input>
+                </ion-item>
+                <span>
+                
+                </span>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item color="transparent">
+                  <ion-label position="floating">Password</ion-label>
+                  <ion-input type="password" [(ngModel)]="postData.password" name="password"></ion-input>
+                </ion-item>
+                <span >
+                </span>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="forgotField">
+              <ion-col size="12">
+                <span routerDirection="root" routerLink="/forgot-password">Forgot Password?</span>
+              </ion-col>
+            </ion-row>
+          </ion-list>
+          
+          <ion-button type="submit" color="primary" expand="full" >Login</ion-button>
+        </form>
+        <!-- <div class="desciption">
+          <br/>
+          <p>For any assistance please email on <b>support1@prestige.ac.in</b>.
+            <br/>Thank you</p>
+        </div>
+
+        <ion-row style="margin-top: 20px;color: black;">
+          Don't have an account? <span class="signup" routerDirection="root" routerLink="/register">SIGN UP</span>
+          <br/><br/>
+        </ion-row> -->
+      
+    </ion-card-content>
+  </ion-card>
+</ion-content>

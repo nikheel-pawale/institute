@@ -1,0 +1,131 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+    	<ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Enroll New Student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+
+  <div class="mainIDiv">
+    <div class="userInfo">
+      <ion-img class="profilePic" [src]="postData.profile_image"></ion-img>
+      
+      <ion-col class="actionCol_1">
+          <ion-icon name="image-outline" class="postIcon" (click)="openGallery()"></ion-icon>
+          <ion-icon name="camera-outline" class="postIcon" (click)="openCamera()"></ion-icon>
+      </ion-col>
+    </div>
+    <div>
+      <form (ngSubmit)="submitPostAction()" novalidate>
+        <ion-list>
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating">Full Name</ion-label>
+                <ion-input type="text" [(ngModel)]="postData.full_name" name="full_name" (ionChange)="onAutoFormatChanged($event)" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+              <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating">Contact No.</ion-label>
+                <ion-input type="number" [(ngModel)]="postData.mobile" name="mobile" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+              <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating" >Email Id</ion-label>
+                <ion-input type="text" [(ngModel)]="postData.email" name="email" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating">Address</ion-label>
+                <ion-textarea auto-grow="true" (ionChange)="onAutoFormatChanged($event)" rows="3" [(ngModel)]="postData.address" name="address"></ion-textarea>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating">City</ion-label>
+                <ion-input type="text" [(ngModel)]="postData.city" name="city" (ionChange)="onAutoFormatChanged($event)" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating">State</ion-label>
+                <ion-input type="text" [(ngModel)]="postData.state" name="state" (ionChange)="onAutoFormatChanged($event)" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <!-- interface="popover" -->
+          <ion-row class="heading">
+            <ion-label>Previous Academy Details</ion-label>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-label position="floating">Previous Couse Name</ion-label>
+                <ion-input type="text" [(ngModel)]="postData.prevAcademyCourseName" name="prevAcademyCourseName" (ionChange)="onAutoFormatChanged($event)" ></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-select [(ngModel)]="postData.prevAcademyPassoutYear" name="prevAcademyPassoutYear" >
+                  <ion-select-option *ngFor="let yearData of yearListData" [value]="yearData.year">{{yearData.year}}</ion-select-option>
+              </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="heading">
+            <ion-label>New Course Admission</ion-label>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label position="floating" >Select Course</ion-label>
+                <ion-select [(ngModel)]="postData.newCourseId" name="newCourseId" >
+                  <ion-select-option *ngFor="let coursesList of coursesListData" [value]="coursesList.ID">{{coursesList.short_name}}</ion-select-option>
+                </ion-select>
+              </ion-item>            
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-item >
+                <ion-select [(ngModel)]="postData.newAdmissionYear" name="newAdmissionYear" >
+                  <ion-select-option *ngFor="let yearData of yearListData" [value]="yearData.year">{{yearData.year}}</ion-select-option>
+              </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        
+          <ion-button type="submit" expand="full" >Submit</ion-button>
+        </ion-list>
+      </form>
+    </div>
+  </div>
+</ion-content>

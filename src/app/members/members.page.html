@@ -1,0 +1,51 @@
+<ion-content>
+	<ion-searchbar (ionInput)="getSearchResult($event)"></ion-searchbar>
+	
+  <ion-card >
+    <ion-item (click)="openPage(data.ID)" >
+      <ion-avatar slot="start">
+        <img src="./assets/default/user.png">
+      </ion-avatar>
+      <ion-label>
+        <h2 class="enrollUser">Seema Vaidya</h2>
+        <p class="entrollData"><span class="entrollText">Lives in:</span> <span class="entrollName"> Dewas </span></p>
+        <p class="entrollData"><span class="entrollText">Enroll Students:</span> <span class="entrollName"> 45 </span></p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card >
+    <ion-item (click)="openPage(data.ID)" >
+      <ion-avatar slot="start">
+        <img src="./assets/default/user.png">
+      </ion-avatar>
+      <ion-label>
+        <h2 class="enrollUser">Nikheel Pawale</h2>
+        <p class="entrollData"><span class="entrollText">Lives in:</span> <span class="entrollName"> Indore </span></p>
+        <p class="entrollData"><span class="entrollText">Enroll Students:</span> <span class="entrollName"> 40 </span></p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+  
+  
+	<!-- <ion-card *ngFor="let data of memberlist_data">
+		<ion-item (click)="openPage(data.ID)" >
+			<ion-avatar slot="start">
+				<img [src]="data.profile_image">
+			</ion-avatar>
+			<ion-label>
+        <h2>{{data.name}}</h2>
+        <p>{{data.education_summary.education}} {{data.year_of_passout}}</p>
+			</ion-label>
+		</ion-item>
+	</ion-card> -->
+
+  <ion-fab horizontal="end" vertical="top" slot="fixed" edge>
+    <ion-fab-button color="primary" routerDirection="forward" routerLink="/member-add">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+	
+</ion-content>

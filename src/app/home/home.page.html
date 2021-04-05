@@ -1,0 +1,98 @@
+<ion-content fullscreen>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+  
+
+  <ion-card class="sliderCard">
+    <ion-slides pager>
+      <ion-slide>
+        <img src="./assets/slider/slider1.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="./assets/slider/slider2.png" />
+      </ion-slide>
+      <ion-slide>
+        <img src="./assets/slider/slider2.png" />
+      </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-grid class="optionBox">
+    <ion-row class="">
+      <!-- (click)="openCategory('members')" -->
+      <ion-col size="3" routerDirection="forward" routerLink="/tabs/members">
+        <div class="colItem" style="background-color:#249AA7;">
+          <ion-badge class="badgeIcon" style="background-color:#1b8a96;">{{data_response.total_members}}</ion-badge>
+          <div class="optionDataDiv" >
+            <ion-icon class="optionBoxIcon" name="newspaper-outline"></ion-icon>
+            <div class="listLabel">Members</div>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- (click)="openCategory('students')"  -->
+      <ion-col size="3" routerDirection="forward" routerLink="/tabs/students">
+        <div class="colItem" style="background-color:#ABD25E;">
+          <ion-badge class="badgeIcon" style="background-color:#749a28;">{{data_response.total_students}}</ion-badge>
+          <div class="optionDataDiv">
+            <ion-icon class="optionBoxIcon" name="aperture-outline"></ion-icon>
+            <div class="listLabel">Student</div>
+          </div>
+        </div>
+      </ion-col>
+      
+      <ion-col size="3"  class="leftRightBorder_rm" routerDirection="forward" routerLink="/tabs/courses">
+        <div class="colItem" style="background-color: #F8C830;">
+          <ion-badge class="badgeIcon" style="background-color:#d45347;">{{data_response.total_courses}}</ion-badge>
+          <div class="optionDataDiv">
+            <ion-icon class="optionBoxIcon" name="chatbox-ellipses-outline"></ion-icon>
+            <div class="listLabel">Courses</div>
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col size="3"  routerDirection="forward" routerLink="/tabs/gallery">
+        <div class="colItem" style="background-color: #F1594A;">
+          <ion-badge class="badgeIcon" style="background-color:#d45347;">{{data_response.total_gallery}}</ion-badge>
+          <div class="optionDataDiv galleryCard">
+            <ion-icon class="optionBoxIcon" name="images-outline" ></ion-icon>
+            <div class="listLabel">GALLERY</div>
+          </div>
+        </div>
+      </ion-col>      
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-card >
+    <ion-item (click)="openPage(data.ID)" >
+      <ion-avatar slot="start">
+        <img src="./assets/default/user.png">
+      </ion-avatar>
+      <ion-label>
+        <h2 class="enrollUser">Shoiab</h2>
+        <p class="entrollData"><span class="entrollText">Enroll By:</span> <span class="entrollName"> Seema Vaidya </span></p>
+        <p class="entrollData"><span class="entrollText">University:</span> <span class="entrollName"> APJ </span></p>
+        <p class="entrollData"><span class="entrollText">Course:</span> <span class="entrollName"> B.Com </span></p>
+        <p class="entrollData"><span class="entrollText">Pending Amount:</span> <span class="entrollName"> 7500 </span></p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card >
+    <ion-item (click)="openPage(data.ID)" >
+      <ion-avatar slot="start">
+        <img src="./assets/default/user.png">
+      </ion-avatar>
+      <ion-label>
+        <h2 class="enrollUser">Ruchika</h2>
+        <p class="entrollData"><span class="entrollText">Enroll By:</span> <span class="entrollName"> Seema Vaidya </span></p>
+        <p class="entrollData"><span class="entrollText">University:</span> <span class="entrollName"> APJ </span></p>
+        <p class="entrollData"><span class="entrollText">Course:</span> <span class="entrollName"> B.Com </span></p>
+        <p class="entrollData"><span class="entrollText">Pending Amount:</span> <span class="entrollName"> 7500 </span></p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+</ion-content>
